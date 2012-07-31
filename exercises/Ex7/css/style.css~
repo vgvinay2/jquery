@@ -170,12 +170,12 @@ body {
 	cursor: pointer;
 }
 
-//#nav li.selected {
-//	background-color: red;
-//	font-weight: normal;
-//}
+#nav li.selected {
+	background-color: red;
+	font-weight: normal;
+}
 
-#nav li.hover {
+#nav li:hover {
 	background-color: blue;
 }
 
