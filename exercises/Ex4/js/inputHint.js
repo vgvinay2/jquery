@@ -8,9 +8,9 @@ $input=$('input[name=q]').attr({value:search,
 $('label[for=q]').remove();
 
 $input.focus(function() {
-    $input.attr({value:null,
-    'class':null
+    $input.attr({value:null
     });
+ $input.removeClass('hint');
 });
 
 
