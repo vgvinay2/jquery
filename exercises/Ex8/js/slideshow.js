@@ -24,10 +24,10 @@ function slideshow() {
   var $slide = $('#slideshow li:first');
  }
  var current = $slide.index()+1;
- $active.fadeOut(3000,function(){
+ $active.fadeOut(2000,function(){
  $active.removeClass('active');
- $slide.fadeIn(2000,function(){slideshow()}).addClass('active');
- $('input#slide_no').attr({value:current});
+ $slide.fadeIn(1500,function(){slideshow()}).addClass('active');
+ $slide_no.attr({value:current});
  });
 }
 
