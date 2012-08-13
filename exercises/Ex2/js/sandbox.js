@@ -6,18 +6,20 @@ $(document).ready(function() {
    $(el).attr('alt')
  );
 });
+ 
+ form = $('label[for=q]').closest('form').addClass('new')
+ console.log(form)
 
- console.log($('label[for=q]').closest('form').attr({ 
-'class' : 'new'})
- );
- var $li=$('ul#myList li.current');
- console.log($('ul#myList li.current').attr({'class':null}));
- console.log($li.next('li').attr({'class':'current'}));
- var $select = $('div#specials select')
- console.log($select.parent().siblings().children());
+ var $li = $('ul#myList li.current').removeClass('current');
+ console.log($li);
+ console.log($li.next('li').addClass('current'));
+
+ select = $('div#specials select')
+ console.log(select.parent().siblings().find('input'));
+
  var $slideshow=$('ul#slideshow li');
- console.log(($slideshow.first()).attr({'class' : 'current'}));
- console.log(($slideshow.first().siblings()).attr({'class' : 'disabled'}));
+ console.log(($slideshow.first()).addClass('current'));
+ console.log(($slideshow.first().siblings()).addClass('disabled'));
 });
 
 
