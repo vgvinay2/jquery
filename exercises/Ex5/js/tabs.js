@@ -6,7 +6,7 @@ $(document).ready(function() {
  $module.each(function(idx, el) {
   var $newlistitem = $('<li></li>');
   $newlistitem.id=idx;
-  text_value = ($module).eq(idx).find('h2').text();
+  text_value = $(el).find('h2').text();
   $newlistitem.text(text_value);
   $newlistitem.appendTo($newlist);
  });
