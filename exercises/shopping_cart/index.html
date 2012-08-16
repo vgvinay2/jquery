@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">	
+.header {
+ padding-top:10px;
+ width:1220px;
+ font-size:24px;
+ color:black;
+ border-bottom:2px solid #0ab1ff;
+ height:50px;
+ margin:10px;
+}
+.footer	{
+ font-family:tahoma;
+ font-size:24px;
+ color:black;
+ margin:10px;
+ border-top:2px solid #0ab1ff;
+ border-bottom:2px solid #0ab1ff;
+ height:50px;
+ clear:left;
+ width:1220px;
+ padding:5px;
+}		
+
+table
+{
+    border-collapse: collapse;
+}
+
+#cart_table tr {
+border:2px solid green;
+}
+#shop td
+{
+    border: solid green 2px;
+    border-left: none;
+    border-right: none;
+}
+#product {
+ margin-left:40px;
+ border:1px solid black;
+ font-family:tahoma;
+ font-size:18px;
+ color:black;
+ padding:5px;
+}
+#cart {
+ padding:5px;
+ margin-left:30px;
+ border:1px solid black;
+ font-family:tahoma;
+ font-size:18px;
+ color:black;
+
+}
+#cart_table {
+margin:auto;
+}
+.container {
+height:450px;
+overflow:auto;
+ width:1220px;
+}
+input {
+width:100px;
+}
+
+input[type=submit] {
+width:300px;
+}
+#total {
+color:blue;
+}
+
+.add:hover,.remove:hover{
+background-color:black;
+color:white;
+}
+img {
+height:70px;
+width:70px;
+}
+
+</style>	
+
+</head>
+
+<body>
+<div class="header">
+</div>
+<div class = "container">
+ <div id="addcart">
+ </div>
+ <div  id="showcart">
+ </div>
+</div>
+<div class="footer">
+<p size="20" align="right">Total:<input type="text" id="total" value="0" disabled><input type="submit" value="checkout"></input></p>
+</div>
+<script src="libs/jquery-1.5.0.js"></script>
+
+<script src="js/cart.js"></script>
+<!--
+<script src="js/hoverClass.js"></script>
+<script src="js/navigation.js"></script>
+<script src="js/blog.js"></script>
+<script src="js/specials.js"></script>
+<script src="js/slideshow.js"></script>
+<script src="js/ions/inputHint.js"></script>
+<script src="js/tabs.js"></script>
+-->
+</body>
+</html>
