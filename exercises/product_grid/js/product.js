@@ -23,6 +23,7 @@ $(document).ready(function () {
  }
  function display() {
   $(products).each(function(idx) {
+
    $image = $('<img/>');
    $image.attr({src:"images/"+(this).url,height : 150,width:150,id:idx});
    $image.attr({'data-brand':(this).brand,'data-color':(this).color,'data-available':(this).sold_out});
@@ -94,8 +95,7 @@ $(document).ready(function () {
       $('img#'+id).hide();
      }
     });        
-   }
-      
+   }      
   });
  }
 });
