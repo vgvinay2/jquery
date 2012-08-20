@@ -6,12 +6,19 @@ $(document).ready(function() {
  count = 0;
  total = 0;
  subtotal = [];
+ json = {}
  $.ajax({ 
    url :'data/shopping_cart.json',
    type : 'GET',
    dataType : 'json',
    cache :'true',
-   success : function(json) {
+   success : function(data) {
+    json=data;
+    display();
+   } 
+ });   
+
+function display() {
     $table = $('<table id="shop"/>');
     $table.appendTo($('div#addcart'));
     $tabs = $('div.header');
@@ -81,21 +88,25 @@ $(document).ready(function() {
      $table_quantity.appendTo($tablerow);
      $table_button.appendTo($tablerow);
      $tablerow.appendTo($table);
+
+
     });
-    $('button.add').click(function(){
-     check = $.inArray(parseInt($(this).attr('id')),store);
-     if (check == -1) {
-      count++;
-      $('font#cart').text('My Cart('+count+')') 
-      store[i] = parseInt($(this).attr('id'));
-      quantity[i] = parseInt($(this).parent().parent().find('input').val());
-      i++;     
-     }
-     else {
-      quantity[check] += parseInt($(this).parent().parent().find('input').val());
-     }
-     showcart(quantity);
-    });
+     $('button.add').click(function(){
+      check = $.inArray(parseInt($(this).attr('id')),store);
+      if (check == -1) {
+       count++;
+       $('font#cart').text('My Cart('+count+')') 
+       store[i] = parseInt($(this).attr('id'));
+       quantity[i] = parseInt($(this).parent().parent().find('input').val());
+       i++;     
+      }
+      else {
+       quantity[check] += parseInt($(this).parent().parent().find('input').val());
+      }
+      showcart(quantity);
+     });
+
+}
 
     function showcart(quantity) {
      $table_cart.find('tr:gt(0)').remove();
@@ -163,7 +174,7 @@ $(document).ready(function() {
       total += subtotal[i];
     }
     $('input#total').val(total);
-    }
+    
    }
    $tab_product.click(function(){
     $('div#showcart').hide();
@@ -174,6 +185,7 @@ $(document).ready(function() {
     $('div#showcart').show();
    });
   } 
- });   
+
 });
+
 
